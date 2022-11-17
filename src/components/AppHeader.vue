@@ -3,6 +3,11 @@ export default {
     name: 'AppHeader',
     props:{
         title: String
+    },
+    methods:{
+	    getImagePath(imageName){
+	    	return new URL (`./assets/img/${imageName}`, import.meta.url).href
+	    }
     }
 }
 </script>
@@ -10,7 +15,7 @@ export default {
 <template>
   <div class="header-content p-3 d-flex">
     <div class="logo me-3">
-        <img src="../assets/img/Breaking_Bad_logo.svg" alt="Logo">
+        <img :src="getImagePath('Breaking_Bad_logo.svg')" alt="Logo">
     </div>
     <h1>{{title}}</h1>
   </div>

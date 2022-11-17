@@ -24,10 +24,11 @@
     },
     methods: {
       getCharacters(){
+        store.isLoaded = false;
         axios.get(store.apiUrl)
         .then( result => {
           store.characterData = result.data;
-          console.log(store.characterData);
+          store.isLoaded = true;
         })
         .catch( error =>{
           console.log(error);
@@ -43,8 +44,9 @@
 <template>
   <AppHeader title="breaking bad api"/>
   <main>
-    <SerieSwitcher />
-    <CardContainer />
+      <SerieSwitcher />
+      <CardContainer />
+
   </main>
   
 </template>
