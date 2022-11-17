@@ -46,6 +46,11 @@ export default {
     height: 100vh;
     background-color: white;
     padding: 50px;
+    overflow: hidden;
+    .cards{
+        overflow-y: scroll;
+        max-height: 100vh;
+    }
     .finder{
         background-color: $finder-color;
         min-height: 60px;

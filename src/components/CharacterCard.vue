@@ -10,9 +10,22 @@ export default {
 
 <template>
   
-    <div class="x-card">
+    <div class="x-card col-2">
         <!-- img name status category -->
-        {{character.name}}
+        <div class="card-image">
+            <img :src="character.img" :alt="character.name">
+        </div>
+        <div class="card-text text-center">
+            <div class="char-name my-3">
+                <span>{{character.name}}</span>
+            </div>
+            <div class="char-category">
+                <span>{{character.category}}</span>
+            </div>
+            <div class="char-status">
+                <span>{{character.status}}</span>
+            </div>
+        </div>
     </div>
 
 </template>
@@ -23,8 +36,19 @@ export default {
 
 @use '../styles/partials/vars' as *;
 
-.xcard{
-    color: black;
+.x-card{
+    height: 400px;
+    padding: .5rem;
+    margin: 1rem;
+    background-color: $primary-color;
+    .card-text{
+        color: darkgrey;
+    }
+    .char-name{
+        font-weight: 600;
+        text-transform: uppercase;
+        color: white;
+    }
 }
 
 </style>
