@@ -10,7 +10,7 @@ export default {
 
 <template>
   
-    <div class="x-card col-2">
+    <div class="x-card col-2 p-3">
         <!-- img name status category -->
         <div class="card-image">
             <img :src="character.img" :alt="character.name">
@@ -19,7 +19,7 @@ export default {
             <div class="char-name my-3">
                 <span>{{character.name}}</span>
             </div>
-            <div class="char-category">
+            <div class="char-category my-2">
                 <span>{{character.category}}</span>
             </div>
             <div class="char-status">

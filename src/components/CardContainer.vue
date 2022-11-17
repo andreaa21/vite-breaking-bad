@@ -21,8 +21,8 @@ export default {
 
 <template>
 
-    <div class="container">
-        <div class="wrapper">
+    <div class="container x-container">
+        <div class="wrapper p-5">
             <div class="finder d-flex align-items-center">
                 <span class="px-3">found 62 characters</span>
             </div>
@@ -42,14 +42,16 @@ export default {
 
 @use '../styles/partials/vars' as *;
 
+.x-container{
+    margin-bottom: 100px;
+}
+
 .wrapper{
     height: 100vh;
     background-color: white;
-    padding: 50px;
-    overflow: hidden;
+    overflow: auto;
     .cards{
-        overflow-y: scroll;
-        max-height: 100vh;
+        margin-bottom: 50px;
     }
     .finder{
         background-color: $finder-color;
