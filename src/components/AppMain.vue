@@ -14,7 +14,7 @@ export default {
     
 <template>
 
-    <div class="container debug">
+    <div class="container">
         <SerieSwitcher />
         <CardContainer />
     </div>
