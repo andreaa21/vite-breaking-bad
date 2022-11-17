@@ -37,7 +37,6 @@ export default {
 @use '../styles/partials/vars' as *;
 
 .x-card{
-    height: 400px;
     padding: .5rem;
     margin: 1rem;
     background-color: $primary-color;

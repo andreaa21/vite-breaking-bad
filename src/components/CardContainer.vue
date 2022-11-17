@@ -28,7 +28,7 @@ export default {
             <div class="finder d-flex align-items-center">
                 <span class="px-3">found {{store.characterData.length}} characters</span>
             </div>
-            <div class="cards row mt-3 d-flex flex-wrap">
+            <div class="cards row mt-3 d-flex flex-wrap justify-content-center">
                 <CharacterCard 
                     v-for="character in store.characterData" 
                     :key="character.char_id"
