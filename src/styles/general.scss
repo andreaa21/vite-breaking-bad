@@ -1,4 +1,14 @@
 @use './partials/vars.scss';
 
 @import 'node_modules/bootstrap/scss/bootstrap';
-@import 'node_modules/@fontsource/roboto;
+@import 'node_modules/@fontsource/roboto';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.debug {
+    background-color: rgba($color: red, $alpha: .25);
+}
