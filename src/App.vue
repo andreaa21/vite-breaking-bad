@@ -1,21 +1,51 @@
   <script>
 
+  import axios from 'axios';
+  import {store} from './data/store'
+
   import AppHeader from './components/AppHeader.vue';
-  import AppMain from './components/AppMain.vue';
+  import SerieSwitcher from './components/SerieSwitcher.vue';
+  import CharacterCard from './components/CharacterCard.vue';
+  import CardContainer from './components/CardContainer.vue';
+
 
   export default {
     name: 'App',
+    data(){
+      return{
+        store
+      }
+    },
     components:{
       AppHeader,
-      AppMain
+      CharacterCard,
+      CardContainer,
+      SerieSwitcher
+    },
+    methods: {
+      getCharacters(){
+        axios.get(store.apiUrl)
+        .then( result => {
+          store.characterData = result.data;
+          console.log(store.characterData);
+        })
+        .catch( error =>{
+          console.log(error);
+        })
+        }
+    },
+    mounted(){
+      this.getCharacters();
     }
-  
   }
   </script>
 
 <template>
-  <AppHeader />
-  <AppMain />
+  <AppHeader title="breaking bad api"/>
+  <main>
+    <SerieSwitcher />
+    <CardContainer />
+  </main>
   
 </template>
 

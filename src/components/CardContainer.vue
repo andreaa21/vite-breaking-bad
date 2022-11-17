@@ -1,6 +1,19 @@
 <script>
+
+import { store } from '../data/store'
+
+import CharacterCard from './CharacterCard.vue'
+
 export default {
-    name: 'CardContainer'
+    name: 'CardContainer',
+    components:{
+        CharacterCard
+    },
+    data(){
+        return{
+            store
+        }
+    }
 
 }
 </script>
@@ -8,12 +21,19 @@ export default {
 
 <template>
 
-  <div class="wrapper">
-    <div class="finder d-flex align-items-center">
-        <span class="px-3">found 62 characters</span>
+    <div class="container">
+        <div class="wrapper">
+            <div class="finder d-flex align-items-center">
+                <span class="px-3">found 62 characters</span>
+            </div>
+            <div class="cards mt-3 d-flex flex-wrap">
+                <CharacterCard 
+                    v-for="character in store.characterData" 
+                    :key="character.char_id"
+                    :character="character"/>
+            </div>
+         </div>
     </div>
-    <div class="cards d-flex flex-wrap"></div>
-  </div>
 
 </template>
 
