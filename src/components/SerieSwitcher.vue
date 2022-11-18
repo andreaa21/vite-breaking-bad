@@ -1,6 +1,14 @@
 <script>
+
+import {store} from '../data/store'
+
 export default {
-    name: 'SerieSwitcher'
+    name: 'SerieSwitcher',
+    data(){
+        return{
+            store
+        }
+    }
 
 }
 </script>
@@ -10,10 +18,14 @@ export default {
 
     <div class="container">
         <div class="select-container p-3">
-            <select class="form-select" aria-label="Default select example">
-                <option value="1">Breaking Bad</option>
-                <option value="2">Better Call Saul</option>
-                <option value="3">Both</option>
+            <select 
+            @click="$emit('startSearch')"
+            v-model="store.categorySearch"
+            class="form-select">
+                <option value="" selected>Choose Category</option>
+                <option value="Breaking Bad">Breaking Bad</option>
+                <option value="Better Call Saul">Better Call Saul</option>
+                <option value="Breaking Bad, Better Call Saul">Both</option>
             </select>
         </div>
     </div>

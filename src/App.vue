@@ -25,7 +25,11 @@
     methods: {
       getCharacters(){
         store.isLoaded = false;
-        axios.get(store.apiUrl)
+        axios.get(store.apiUrl,{
+          params: {
+            category: store.categorySearch
+          }
+        })
         .then( result => {
           store.characterData = result.data;
           store.isLoaded = true;
@@ -44,7 +48,7 @@
 <template>
   <AppHeader title="breaking bad api"/>
   <main>
-      <SerieSwitcher />
+      <SerieSwitcher @startSearch="getCharacters"/>
       <CardContainer />
 
   </main>
